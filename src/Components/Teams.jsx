@@ -28,20 +28,20 @@ export default function Teams() {
   return (
     <>
       <div className="Teams">
+        <h2 className="main-title">TEAMS</h2>
         {teams.map((teams) => {
           return (
             <>
-              <h2>TEAMS</h2>
-              <Card bg="dark" data-bs-theme="dark">
-                Name: {teams.name} <br />
+              <Card bg="dark" data-bs-theme="dark" key={teams.id}>
+                <h2>Team:</h2>
+                {teams.name} <br />
                 Id: {teams.id} <br />
                 Score: {teams.score} <br />
-                {teams.createdAt} <br />
-                <h3>Players:</h3>
+                <h3>Players:</h3> <br />
                 <Container>
-                  <Row md={2}>
-                    <Col >
-                      {teams.players.map((player) => (
+                  <Row>
+                    {teams.players.map((player) => (
+                      <Col md={3} key={player.id}>
                         <Card key={player.id}>
                           <Link to={`/players/${player.id}`}>
                             <Card.Img src={player.imageUrl} />
@@ -49,8 +49,8 @@ export default function Teams() {
                           <br />
                           {player.name}
                         </Card>
-                      ))}
-                    </Col>
+                      </Col>
+                    ))}
                   </Row>
                 </Container>
               </Card>

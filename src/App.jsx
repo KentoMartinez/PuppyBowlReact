@@ -14,11 +14,11 @@ import Button from "react-bootstrap/Button";
 function App() {
   return (
     <>
-      <div id="continer">
+      <div id="container">
         <div id="navbar">
         <Navbar  fixed="top" bg="dark" data-bs-theme="dark">
           <Container>
-            <Nav id="me-auto">
+            <Nav className="justify-content-between">
               <Navbar.Brand href="/welcome" id="main-header">
                 PUPPY BOWL 2023
               </Navbar.Brand>

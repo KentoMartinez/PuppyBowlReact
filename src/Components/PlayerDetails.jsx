@@ -3,9 +3,7 @@ import Card from "react-bootstrap/Card";
 import Button from "react-bootstrap/Button";
 import { useEffect } from "react";
 import { useState } from "react";
-import Container from "react-bootstrap/Container";
-import Row from "react-bootstrap/Row";
-import Col from "react-bootstrap/Col";
+
 
 export default function PlayerDetails() {
   const { id } = useParams();
@@ -42,9 +40,7 @@ export default function PlayerDetails() {
     <>
       <h2>PLAYER</h2>
       <div id="single-card">
-        <Container>
-          <Row md={2}>
-            <Col>
+       
               {playerDetail && (
                 <Card bg="dark" data-bs-theme="dark">
                   <Card.Img src={playerDetail.imageUrl} />
@@ -57,14 +53,12 @@ export default function PlayerDetails() {
                   {playerDetail.createdAt}
                 </Card>
               )}
-            </Col>
-          </Row>
-        </Container>
+           
       </div>
       <Button variant="outline-danger" Click={handleDelete} id="delete-button">
         Delete
       </Button>
-      <Button variant="outline-dark" href="/teams">
+      <Button variant="outline-light" href="/teams">
         Back
       </Button>
     </>

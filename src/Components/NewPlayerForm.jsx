@@ -82,7 +82,7 @@ function NewPlayerForm() {
         <Button variant="outline-success" type="submit">
           Submit
         </Button>
-        <Button variant="outline-dark" href="/teams">
+        <Button variant="outline-light" href="/teams">
           Back
         </Button>
       </Form>
