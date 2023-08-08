@@ -14,7 +14,7 @@ function NewPlayerForm() {
 
     try {
       const response = await fetch(
-        "https://fsa-puppy-bowl.herokuapp.com/api/2302-ACC-PT-WEB-PT-C/players/",
+        "https://fsa-puppy-bowl.herokuapp.com/api/2302-ACC-PT-WEB-PT-C/players",
         {
           method: "POST",
           headers: {
@@ -55,7 +55,7 @@ function NewPlayerForm() {
         <Form.Group className="mb-3" controlId="formBasicUrl">
           <Form.Label>Image</Form.Label>
           <Form.Control
-            type="text"
+            type="url"
             placeholder="Enter Url"
             value={imageUrl}
             onChange={(e) => setImageUrl(e.target.value)}
@@ -66,8 +66,8 @@ function NewPlayerForm() {
           <Form.Select
             value={status}
             onChange={(e) => setStatus(e.target.value)}>
-            <option value="1">field</option>
-            <option value="2">bench</option>
+            <option type="enum">field</option>
+            <option type="enum">bench</option>
           </Form.Select>
         </Form.Group>
         <Form.Group className="mb-3" controlId="formBasicTeamId">
@@ -75,11 +75,11 @@ function NewPlayerForm() {
           <Form.Select
             value={teamId}
             onChange={(e) => setTeamId(e.target.value)}>
-            <option value="1">680</option>
-            <option value="2">679</option>
+            <option type="number">680</option>
+            <option type="number">679</option>
           </Form.Select>
         </Form.Group>
-        <Button variant="outline-success" type="submit">
+        <Button variant="outline-success" onClick={handleSubmit} type="submit">
           Submit
         </Button>
         <Button variant="outline-light" href="/teams">

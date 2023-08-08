@@ -43,7 +43,7 @@ export default function PlayerDetails() {
        
               {playerDetail && (
                 <Card bg="dark" data-bs-theme="dark">
-                  <Card.Img src={playerDetail.imageUrl} />
+                  <Card.Img className="singlePi" src={playerDetail.imageUrl} />
                   Name: {playerDetail.name} <br />
                   Id: {playerDetail.id} <br />
                   Breed: {playerDetail.breed} <br />
@@ -55,7 +55,7 @@ export default function PlayerDetails() {
               )}
            
       </div>
-      <Button variant="outline-danger" Click={handleDelete} id="delete-button">
+      <Button variant="outline-danger" onClick={handleDelete} id="delete-button">
         Delete
       </Button>
       <Button variant="outline-light" href="/teams">

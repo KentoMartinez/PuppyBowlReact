@@ -74,3 +74,10 @@ button:focus-visible {
   width: 115vmin;
   max-height: fit-content;
 }
+form {
+  color: rgb(141, 135, 135);
+}
+.singlePi {
+  width: 35vmin;
+  max-height: fit-content;
+}
