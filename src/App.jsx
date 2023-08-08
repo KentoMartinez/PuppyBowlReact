@@ -25,7 +25,7 @@ function App() {
               <Nav.Link href="/teams">Teams</Nav.Link>
               <Nav.Link href="/newplayerform">Forms</Nav.Link>
               <Nav.Link href="/fakelink">Games</Nav.Link>
-              <Nav.Link href="/fakelink">Tickes</Nav.Link>
+              <Nav.Link href="/fakelink">Tickets</Nav.Link>
               <Form className="d-flex">
             <Form.Control
               type="search"
