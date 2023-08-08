@@ -1,12 +1,12 @@
-import { useParams } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 import Card from "react-bootstrap/Card";
 import Button from "react-bootstrap/Button";
 import { useEffect } from "react";
 import { useState } from "react";
 
-
 export default function PlayerDetails() {
   const { id } = useParams();
+  const navigate = useNavigate();
   const [playerDetail, setPlayerDetails] = useState();
   useEffect(() => {
     async function fetchDetails() {
@@ -40,25 +40,32 @@ export default function PlayerDetails() {
     <>
       <h2>PLAYER</h2>
       <div id="single-card">
-       
-              {playerDetail && (
-                <Card bg="dark" data-bs-theme="dark">
-                  <Card.Img className="singlePi" src={playerDetail.imageUrl} />
-                  Name: {playerDetail.name} <br />
-                  Id: {playerDetail.id} <br />
-                  Breed: {playerDetail.breed} <br />
-                  Status: {playerDetail.status} <br />
-                  Team: {playerDetail.team.name} <br />
-                  Team ID: {playerDetail.teamId} <br />
-                  {playerDetail.createdAt}
-                </Card>
-              )}
-           
+        {playerDetail && (
+          <Card bg="dark" data-bs-theme="dark">
+            <Card.Img className="singlePi" src={playerDetail.imageUrl} />
+            Name: {playerDetail.name} <br />
+            Id: {playerDetail.id} <br />
+            Breed: {playerDetail.breed} <br />
+            Status: {playerDetail.status} <br />
+            Team: {playerDetail.team.name} <br />
+            Team ID: {playerDetail.teamId} <br />
+            {playerDetail.createdAt}
+          </Card>
+        )}
       </div>
-      <Button variant="outline-danger" onClick={handleDelete} id="delete-button">
+      <Button
+        variant="outline-danger"
+        onClick={handleDelete}
+        id="delete-button"
+      >
         Delete
       </Button>
-      <Button variant="outline-light" href="/teams">
+      <Button
+        variant="outline-light"
+        onClick={() => {
+          navigate("/teams");
+        }}
+      >
         Back
       </Button>
     </>

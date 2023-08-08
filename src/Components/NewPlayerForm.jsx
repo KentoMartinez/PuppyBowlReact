@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
 function NewPlayerForm() {
@@ -8,6 +9,7 @@ function NewPlayerForm() {
   const [imageUrl, setImageUrl] = useState("");
   const [teamId, setTeamId] = useState(680);
   const [error, setError] = useState(null);
+  const navigate = useNavigate();
 
   async function handleSubmit(event) {
     event.preventDefault();
@@ -86,7 +88,9 @@ function NewPlayerForm() {
         <Button variant="outline-success" onClick={handleSubmit} type="submit">
           Submit
         </Button>
-        <Button variant="outline-light" href="/teams">
+        <Button variant="outline-light" onClick={() => {
+                    navigate("/teams");
+                  }}>
           Back
         </Button>
       </Form>
