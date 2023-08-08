@@ -1,5 +1,5 @@
 import "./App.css";
-import { Routes, Route } from "react-router-dom";
+import { Routes, Route, useNavigate } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
 import PlayerDetails from "./Components/PlayerDetails";
 import Welcome from "./Components/Welcome";
@@ -12,20 +12,21 @@ import FakeTabs from "./Components/FakeTabs";
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
 function App() {
+  const navigate = useNavigate() 
   return (
     <>
       <div id="container">
         <div id="navbar">
         <Navbar  fixed="top" bg="dark" data-bs-theme="dark">
           <Container>
-            <Nav className="justify-content-between">
+            <Nav className="me-auto my-2 my-lg-0">
               <Navbar.Brand href="/" id="main-header">
                 PUPPY BOWL 2023
               </Navbar.Brand>
-              <Nav.Link href="/teams">Teams</Nav.Link>
-              <Nav.Link href="/newplayerform">Forms</Nav.Link>
-              <Nav.Link href="/fakelink">Games</Nav.Link>
-              <Nav.Link href="/fakelink">Tickets</Nav.Link>
+              <Nav.Link onClick={navigate("/teams")}>Teams</Nav.Link>
+              <Nav.Link onClick={navigate("/forms")}>Forms</Nav.Link>
+              <Nav.Link onClick={navigate("/fakelink")}>Games</Nav.Link>
+              <Nav.Link onClick={navigate("/fakelink")}>Tickets</Nav.Link>
               <Form className="d-flex">
             <Form.Control
               type="search"
