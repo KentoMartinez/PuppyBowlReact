@@ -42,7 +42,7 @@ export default function Teams() {
                   <Row>
                     {teams.players.map((player) => (
                       <Col md={3} key={player.id}>
-                        <Card key={player.id}>
+                        <Card className="h-100" key={player.id}>
                           <Link to={`/players/${player.id}`}>
                             <Card.Img src={player.imageUrl} />
                           </Link>{" "}

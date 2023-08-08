@@ -19,7 +19,7 @@ function App() {
         <Navbar  fixed="top" bg="dark" data-bs-theme="dark">
           <Container>
             <Nav className="justify-content-between">
-              <Navbar.Brand href="/welcome" id="main-header">
+              <Navbar.Brand href="/" id="main-header">
                 PUPPY BOWL 2023
               </Navbar.Brand>
               <Nav.Link href="/teams">Teams</Nav.Link>
@@ -40,7 +40,7 @@ function App() {
           </Navbar>
         </div>
         <Routes id="main-section">
-          <Route path="/welcome" element={<Welcome />} />
+          <Route path="/" element={<Welcome />} />
           <Route path="/players/:id" element={<PlayerDetails />} />
           <Route path="/newplayerform" element={<NewPlayerForm />} />
           <Route path="/teams" element={<Teams />} />

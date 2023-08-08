@@ -4,9 +4,9 @@ import Form from "react-bootstrap/Form";
 function NewPlayerForm() {
   const [name, setName] = useState("");
   const [breed, setBreed] = useState("");
-  const [status, setStatus] = useState("");
+  const [status, setStatus] = useState("field");
   const [imageUrl, setImageUrl] = useState("");
-  const [teamId, setTeamId] = useState("");
+  const [teamId, setTeamId] = useState(680);
   const [error, setError] = useState(null);
 
   async function handleSubmit(event) {
@@ -63,20 +63,22 @@ function NewPlayerForm() {
         </Form.Group>
         <Form.Group className="mb-3" controlId="formBasicStatus">
           <Form.Label>Status</Form.Label>
-          <Form.Select aria-label="Default select example"
+          <Form.Select
+            aria-label="Default select example"
             value={status}
-            onChange={(e) => setStatus(e.target.value)}>
-            <option>Enter Status</option>
+            onChange={(e) => setStatus(e.target.value)}
+          >
             <option type="enum">field</option>
             <option type="enum">bench</option>
           </Form.Select>
         </Form.Group>
         <Form.Group className="mb-3" controlId="formBasicTeamId">
           <Form.Label>Team</Form.Label>
-          <Form.Select aria-label="Default select example"
+          <Form.Select
+            aria-label="Default select example"
             value={teamId}
-            onChange={(e) => setTeamId(e.target.value)}>
-            <option>Enter Team Number</option>
+            onChange={(e) => setTeamId(e.target.value)}
+          >
             <option type="number">680</option>
             <option type="number">679</option>
           </Form.Select>
