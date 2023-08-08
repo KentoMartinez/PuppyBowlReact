@@ -63,18 +63,20 @@ function NewPlayerForm() {
         </Form.Group>
         <Form.Group className="mb-3" controlId="formBasicStatus">
           <Form.Label>Status</Form.Label>
-          <Form.Select
+          <Form.Select aria-label="Default select example"
             value={status}
             onChange={(e) => setStatus(e.target.value)}>
+            <option>Enter Status</option>
             <option type="enum">field</option>
             <option type="enum">bench</option>
           </Form.Select>
         </Form.Group>
         <Form.Group className="mb-3" controlId="formBasicTeamId">
           <Form.Label>Team</Form.Label>
-          <Form.Select
+          <Form.Select aria-label="Default select example"
             value={teamId}
             onChange={(e) => setTeamId(e.target.value)}>
+            <option>Enter Team Number</option>
             <option type="number">680</option>
             <option type="number">679</option>
           </Form.Select>
